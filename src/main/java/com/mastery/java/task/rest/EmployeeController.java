@@ -47,7 +47,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee( @RequestBody Employee employee) {
+    public Employee createEmployee(@RequestBody Employee employee) {
         return this.employeeDao.save(employee);
     }
 

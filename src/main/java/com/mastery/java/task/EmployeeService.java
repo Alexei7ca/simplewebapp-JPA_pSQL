@@ -10,20 +10,20 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan("com.mastery.java.task.rest")
 public class EmployeeService implements ApplicationContextAware {
-        private static ApplicationContext applicationContext;
+    private static ApplicationContext applicationContext;
 
-     public static void main(String... args) {
-         SpringApplication.run(EmployeeService.class, args);
+    public static void main(String... args) {
+        SpringApplication.run(EmployeeService.class, args);
 
-         String[] beans  = { "employeeController"};
-         for (String beanName : beans) {
-             System.out.println("Is " + beanName + " in ApplicationContext: " +
-                     applicationContext.containsBean(beanName));
-         }
-     }
-
-        @Override
-        public void setApplicationContext(ApplicationContext _applicationContext) throws BeansException {
-            applicationContext = _applicationContext;
+        String[] beans = {"employeeController"};
+        for (String beanName : beans) {
+            System.out.println("Is " + beanName + " in ApplicationContext: " +
+                    applicationContext.containsBean(beanName));
         }
     }
+
+    @Override
+    public void setApplicationContext(ApplicationContext _applicationContext) throws BeansException {
+        applicationContext = _applicationContext;
+    }
+}
